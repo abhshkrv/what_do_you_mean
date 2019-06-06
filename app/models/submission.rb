@@ -1,6 +1,9 @@
 class Submission < ApplicationRecord
   # Direct associations
 
+  has_one    :result,
+             :dependent => :destroy
+
   belongs_to :user,
              :counter_cache => true
 
