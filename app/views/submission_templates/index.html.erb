@@ -1,0 +1,92 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All submissions
+    </h1>
+
+    <a href="/submissions/new" class="btn btn-block btn-outline-secondary">
+      Add a new submission
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Text
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @submissions.each do |submission| %>
+      <tr>
+        <!-- Display submission.id start -->
+        <td>
+          <%= submission.id %>
+        </td>
+        <!-- Display submission.id end -->
+
+        <!-- Display submission.text start -->
+        <td>
+          <%= submission.text %>
+        </td>
+        <!-- Display submission.text end -->
+
+        <!-- Display submission.user_id start -->
+        <td>
+          <%= submission.user_id %>
+        </td>
+        <!-- Display submission.user_id end -->
+
+        <!-- Display submission.created_at start -->
+        <td>
+          <%= time_ago_in_words(submission.created_at) %> ago
+        </td>
+        <!-- Display submission.created_at end -->
+
+        <!-- Display submission.updated_at start -->
+        <td>
+          <%= time_ago_in_words(submission.updated_at) %> ago
+        </td>
+        <!-- Display submission.updated_at end -->
+
+        <td>
+          <a href="/submissions/<%= submission.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @submission.present? %>
+  <% if @submission.errors.any? %>
+    <% @submission.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new submission
+</h1>
+
+
+<hr>
+
+<!-- Form submission start -->
+<form action="/create_submission" method="post">
+<!-- Form submission end -->
+
+  <!-- Label and input for text start -->
+  <div class="form-group">
+    <label for="text">
+      Text
+    </label>
+
+    <!-- Input for text start -->
+    <input type="text" id="text" name="text" class="form-control" value="<%= @submission.text %>">
+    <!-- Input for text end -->
+  </div>
+  <!-- Label and input for text end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @submission.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create submission
+  </button>
+</form>
+
+<hr>
+
+<a href="/submissions">
+  Go back
+</a>
