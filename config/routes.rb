@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Reaction resource:
+
+  # CREATE
+  get("/reactions/new", { :controller => "reactions", :action => "new_form" })
+  post("/create_reaction", { :controller => "reactions", :action => "create_row" })
+
+  # READ
+  get("/reactions", { :controller => "reactions", :action => "index" })
+  get("/reactions/:id_to_display", { :controller => "reactions", :action => "show" })
+
+  # UPDATE
+  get("/reactions/:prefill_with_id/edit", { :controller => "reactions", :action => "edit_form" })
+  post("/update_reaction/:id_to_modify", { :controller => "reactions", :action => "update_row" })
+
+  # DELETE
+  get("/delete_reaction/:id_to_remove", { :controller => "reactions", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Result resource:
 
   # CREATE

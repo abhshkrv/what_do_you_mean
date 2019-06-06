@@ -1,0 +1,56 @@
+<h1>
+  Edit reaction #<%= @reaction.id %>
+</h1>
+
+<hr>
+
+<!-- Form reaction start -->
+<form action="/update_reaction/<%= @reaction.id %>" method="post">
+<!-- Form reaction end -->
+
+  <!-- Label and input for reaction start -->
+  <div class="form-group">
+    <label for="reaction">
+      Reaction
+    </label>
+
+    <!-- Input for reaction start -->
+    <input type="text" id="reaction" name="reaction" class="form-control" value="<%= @reaction.reaction %>">
+    <!-- Input for reaction end -->
+  </div>
+  <!-- Label and input for reaction end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @reaction.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for submission_id start -->
+  <div class="form-group">
+    <label for="submission_id">
+      Submission
+    </label>
+
+    <!-- Input for submission_id start -->
+    <input type="text" id="submission_id" name="submission_id" class="form-control" value="<%= @reaction.submission_id %>">
+    <!-- Input for submission_id end -->
+  </div>
+  <!-- Label and input for submission_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update reaction
+  </button>
+</form>
+
+<hr>
+
+<a href="/reactions">
+  Go back
+</a>
