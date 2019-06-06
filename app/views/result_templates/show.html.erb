@@ -34,7 +34,11 @@
       </dt>
       <!-- Display submission_id start -->
       <dd>
-        <%= @result.submission_id %>
+        <% if @result.submission.present? %>
+          <a href="/submissions/<%= @result.submission_id %>">
+            <%= @result.submission.text %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display submission_id end -->
 

@@ -43,7 +43,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @submission.user_id %>
+        <% if @submission.user.present? %>
+          <a href="/users/<%= @submission.user_id %>">
+            <%= @submission.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

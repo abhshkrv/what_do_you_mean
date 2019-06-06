@@ -68,13 +68,21 @@
 
         <!-- Display reaction.user_id start -->
         <td>
-          <%= reaction.user.email %>
+          <% if reaction.user.present? %>
+            <a href="/users/<%= reaction.user.id %>">
+              <%= reaction.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display reaction.user_id end -->
 
         <!-- Display reaction.submission_id start -->
         <td>
-          <%= reaction.submission.text %>
+          <% if reaction.submission.present? %>
+            <a href="/submissions/<%= reaction.submission.id %>">
+              <%= reaction.submission.text %>
+            </a>
+          <% end %>
         </td>
         <!-- Display reaction.submission_id end -->
 

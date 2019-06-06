@@ -64,7 +64,11 @@
 
         <!-- Display submission.user_id start -->
         <td>
-          <%= submission.user.email %>
+          <% if submission.user.present? %>
+            <a href="/users/<%= submission.user.id %>">
+              <%= submission.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display submission.user_id end -->
 

@@ -62,7 +62,11 @@
 
         <!-- Display result.submission_id start -->
         <td>
-          <%= result.submission.text %>
+          <% if result.submission.present? %>
+            <a href="/submissions/<%= result.submission.id %>">
+              <%= result.submission.text %>
+            </a>
+          <% end %>
         </td>
         <!-- Display result.submission_id end -->
 

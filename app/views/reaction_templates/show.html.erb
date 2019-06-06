@@ -43,7 +43,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @reaction.user_id %>
+        <% if @reaction.user.present? %>
+          <a href="/users/<%= @reaction.user_id %>">
+            <%= @reaction.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -52,7 +56,11 @@
       </dt>
       <!-- Display submission_id start -->
       <dd>
-        <%= @reaction.submission_id %>
+        <% if @reaction.submission.present? %>
+          <a href="/submissions/<%= @reaction.submission_id %>">
+            <%= @reaction.submission.text %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display submission_id end -->
 
