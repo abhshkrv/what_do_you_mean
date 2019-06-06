@@ -1,6 +1,9 @@
 class Submission < ApplicationRecord
   # Direct associations
 
+  has_many   :reactions,
+             :dependent => :destroy
+
   has_one    :result,
              :dependent => :destroy
 
