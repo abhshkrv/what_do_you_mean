@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "submissions#index"
   # Routes for the Reaction resource:
 
   # CREATE
