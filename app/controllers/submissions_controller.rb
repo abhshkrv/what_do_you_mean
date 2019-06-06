@@ -1,6 +1,6 @@
 class SubmissionsController < ApplicationController
   def index
-    @submissions = Submission.all
+    @submissions = Submission.page(params[:page]).per(10)
 
     render("submission_templates/index.html.erb")
   end

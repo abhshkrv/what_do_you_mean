@@ -1,6 +1,6 @@
 class ReactionsController < ApplicationController
   def index
-    @reactions = Reaction.all
+    @reactions = Reaction.page(params[:page]).per(10)
 
     render("reaction_templates/index.html.erb")
   end
