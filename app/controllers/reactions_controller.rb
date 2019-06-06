@@ -55,6 +55,22 @@ class ReactionsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @reaction = Reaction.find(params.fetch("id_to_remove"))
+
+    @reaction.destroy
+
+    redirect_to("/users/#{@reaction.user_id}", notice: "Reaction deleted successfully.")
+  end
+
+  def destroy_row_from_submission
+    @reaction = Reaction.find(params.fetch("id_to_remove"))
+
+    @reaction.destroy
+
+    redirect_to("/submissions/#{@reaction.submission_id}", notice: "Reaction deleted successfully.")
+  end
+
   def destroy_row
     @reaction = Reaction.find(params.fetch("id_to_remove"))
 

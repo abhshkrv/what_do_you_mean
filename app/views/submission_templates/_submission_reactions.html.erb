@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Reactions
+
+    <a data-toggle="collapse" href="#submission_reactions_new_form">
+      Add reaction
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @submission.reactions.each do |reaction| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/reactions/<%= reaction.id %>">
+          <%= reaction.reaction %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_reaction_from_submission/<%= reaction.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="submission_reactions_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

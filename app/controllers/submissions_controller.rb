@@ -53,6 +53,14 @@ class SubmissionsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @submission = Submission.find(params.fetch("id_to_remove"))
+
+    @submission.destroy
+
+    redirect_to("/users/#{@submission.user_id}", notice: "Submission deleted successfully.")
+  end
+
   def destroy_row
     @submission = Submission.find(params.fetch("id_to_remove"))
 
