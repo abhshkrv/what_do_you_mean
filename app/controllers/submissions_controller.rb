@@ -6,6 +6,7 @@ class SubmissionsController < ApplicationController
   end
 
   def show
+    @reaction = Reaction.new
     @submission = Submission.find(params.fetch("id_to_display"))
 
     render("submission_templates/show.html.erb")

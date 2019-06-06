@@ -33,6 +33,22 @@ class ReactionsController < ApplicationController
     end
   end
 
+  def create_row_from_submission
+    @reaction = Reaction.new
+
+    @reaction.reaction = params.fetch("reaction")
+    @reaction.user_id = params.fetch("user_id")
+    @reaction.submission_id = params.fetch("submission_id")
+
+    if @reaction.valid?
+      @reaction.save
+
+      redirect_to("/submissions/#{@reaction.submission_id}", notice: "Reaction created successfully.")
+    else
+      render("reaction_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @reaction = Reaction.find(params.fetch("prefill_with_id"))
 
