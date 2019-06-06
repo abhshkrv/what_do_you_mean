@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @result.errors.any? %>
   <% @result.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,45 +12,31 @@
 
 <hr>
 
-<!-- Form result start -->
 <form action="/update_result/<%= @result.id %>" method="post">
-<!-- Form result end -->
 
-  <!-- Label and input for submission_id start -->
   <div class="form-group">
     <label for="submission_id">
       Submission
     </label>
 
-    <!-- Input for submission_id start -->
     <%= select_tag(:submission_id, options_from_collection_for_select(Submission.all, :id, :text, @result.submission_id), :class => "form-control") %>
-    <!-- Input for submission_id end -->
   </div>
-  <!-- Label and input for submission_id end -->
 
-  <!-- Label and input for flags start -->
   <div class="form-group">
     <label for="flags">
       Flags
     </label>
 
-    <!-- Input for flags start -->
     <input type="text" id="flags" name="flags" class="form-control" value="<%= @result.flags %>">
-    <!-- Input for flags end -->
   </div>
-  <!-- Label and input for flags end -->
 
-  <!-- Label and input for confidence start -->
   <div class="form-group">
     <label for="confidence">
       Confidence
     </label>
 
-    <!-- Input for confidence start -->
     <input type="text" id="confidence" name="confidence" class="form-control" value="<%= @result.confidence %>">
-    <!-- Input for confidence end -->
   </div>
-  <!-- Label and input for confidence end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update result

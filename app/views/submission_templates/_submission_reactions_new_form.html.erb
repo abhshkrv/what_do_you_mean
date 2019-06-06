@@ -1,35 +1,22 @@
-<!-- Form reaction start -->
 <form action="/create_reaction_from_submission" method="post">
-<!-- Form reaction end -->
 
-  <!-- Label and input for reaction start -->
   <div class="form-group">
     <label for="reaction">
       Reaction
     </label>
 
-    <!-- Input for reaction start -->
     <input type="text" id="reaction" name="reaction" class="form-control" value="<%= @reaction.reaction %>">
-    <!-- Input for reaction end -->
   </div>
-  <!-- Label and input for reaction end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @reaction.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for submission_id start -->
-  <!-- Input for submission_id start -->
   <input type="hidden" name="submission_id" value="<%= @submission.id %>">
-  <!-- Input for submission_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create reaction

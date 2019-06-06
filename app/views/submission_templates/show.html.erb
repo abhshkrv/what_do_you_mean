@@ -11,37 +11,30 @@
         </a>
       </div>
 
-      <!-- Edit link submission start -->
       <div class="col">
         <a href="/submissions/<%= @submission.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit submission
         </a>
       </div>
-      <!-- Edit link submission end -->
 
-      <!-- Delete link submission start -->
       <div class="col">
         <a href="/delete_submission/<%= @submission.id %>" class="btn btn-block btn-outline-secondary">
           Delete submission
         </a>
       </div>
-      <!-- Delete link submission end -->
     </div>
 
     <dl>
       <dt>
         Text
       </dt>
-      <!-- Display text start -->
       <dd>
         <%= @submission.text %>
       </dd>
-      <!-- Display text end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @submission.user.present? %>
           <a href="/users/<%= @submission.user_id %>">
@@ -49,33 +42,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@submission.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@submission.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "submission_templates/submission_reactions" %>
   </div>
 </div>
-<!-- Show Page Customization end -->
