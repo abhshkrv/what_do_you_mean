@@ -1,0 +1,68 @@
+<!-- Validation failure messages -->
+<% if @result.present? %>
+  <% if @result.errors.any? %>
+    <% @result.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new result
+</h1>
+
+
+<hr>
+
+<!-- Form result start -->
+<form action="/create_result" method="post">
+<!-- Form result end -->
+
+  <!-- Label and input for submission_id start -->
+  <div class="form-group">
+    <label for="submission_id">
+      Submission
+    </label>
+
+    <!-- Input for submission_id start -->
+    <input type="text" id="submission_id" name="submission_id" class="form-control" value="<%= @result.submission_id %>">
+    <!-- Input for submission_id end -->
+  </div>
+  <!-- Label and input for submission_id end -->
+
+  <!-- Label and input for flags start -->
+  <div class="form-group">
+    <label for="flags">
+      Flags
+    </label>
+
+    <!-- Input for flags start -->
+    <input type="text" id="flags" name="flags" class="form-control" value="<%= @result.flags %>">
+    <!-- Input for flags end -->
+  </div>
+  <!-- Label and input for flags end -->
+
+  <!-- Label and input for confidence start -->
+  <div class="form-group">
+    <label for="confidence">
+      Confidence
+    </label>
+
+    <!-- Input for confidence start -->
+    <input type="text" id="confidence" name="confidence" class="form-control" value="<%= @result.confidence %>">
+    <!-- Input for confidence end -->
+  </div>
+  <!-- Label and input for confidence end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create result
+  </button>
+</form>
+
+<hr>
+
+<a href="/results">
+  Go back
+</a>

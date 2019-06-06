@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Result #<%= @result.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/results" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link result start -->
+      <div class="col">
+        <a href="/results/<%= @result.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit result
+        </a>
+      </div>
+      <!-- Edit link result end -->
+
+      <!-- Delete link result start -->
+      <div class="col">
+        <a href="/delete_result/<%= @result.id %>" class="btn btn-block btn-outline-secondary">
+          Delete result
+        </a>
+      </div>
+      <!-- Delete link result end -->
+    </div>
+
+    <dl>
+      <dt>
+        Submission
+      </dt>
+      <!-- Display submission_id start -->
+      <dd>
+        <%= @result.submission_id %>
+      </dd>
+      <!-- Display submission_id end -->
+
+      <dt>
+        Flags
+      </dt>
+      <!-- Display flags start -->
+      <dd>
+        <%= @result.flags %>
+      </dd>
+      <!-- Display flags end -->
+
+      <dt>
+        Confidence
+      </dt>
+      <!-- Display confidence start -->
+      <dd>
+        <%= @result.confidence %>
+      </dd>
+      <!-- Display confidence end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@result.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@result.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
