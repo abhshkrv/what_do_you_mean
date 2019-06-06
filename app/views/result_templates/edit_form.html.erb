@@ -15,7 +15,7 @@
     </label>
 
     <!-- Input for submission_id start -->
-    <input type="text" id="submission_id" name="submission_id" class="form-control" value="<%= @result.submission_id %>">
+    <%= select_tag(:submission_id, options_from_collection_for_select(Submission.all, :id, :text, @result.submission_id), :class => "form-control") %>
     <!-- Input for submission_id end -->
   </div>
   <!-- Label and input for submission_id end -->
