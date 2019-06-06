@@ -43,7 +43,7 @@ class SubmissionsController < ApplicationController
     @submission = Submission.find(params.fetch("id_to_modify"))
 
     @submission.text = params.fetch("text")
-    @submission.user_id = params.fetch("user_id")
+    
 
     if @submission.valid?
       @submission.save
