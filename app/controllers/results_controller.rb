@@ -1,6 +1,7 @@
 class ResultsController < ApplicationController
   def index
-    @results = Result.page(params[:page]).per(10)
+    @q = Result.ransack(params[:q])
+    @results = @q.result(:distinct => true).includes(:submission).page(params[:page]).per(10)
 
     render("result_templates/index.html.erb")
   end

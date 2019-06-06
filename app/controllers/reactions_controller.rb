@@ -1,6 +1,7 @@
 class ReactionsController < ApplicationController
   def index
-    @reactions = Reaction.page(params[:page]).per(10)
+    @q = Reaction.ransack(params[:q])
+    @reactions = @q.result(:distinct => true).includes(:user, :submission).page(params[:page]).per(10)
 
     render("reaction_templates/index.html.erb")
   end
