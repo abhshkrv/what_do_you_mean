@@ -1,4 +1,6 @@
 ActiveAdmin.register Result do
+
+ permit_params :submission_id, :flags, :confidence
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
